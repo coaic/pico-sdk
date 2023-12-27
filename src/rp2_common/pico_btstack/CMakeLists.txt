@@ -38,6 +38,7 @@ if (EXISTS ${PICO_BTSTACK_PATH}/${BTSTACK_TEST_PATH})
         ${PICO_BTSTACK_PATH}/src/btstack_base64_decoder.c
         ${PICO_BTSTACK_PATH}/src/btstack_crypto.c
         ${PICO_BTSTACK_PATH}/src/btstack_hid_parser.c
+        ${PICO_BTSTACK_PATH}/src/btstack_hid.c
         ${PICO_BTSTACK_PATH}/src/btstack_linked_list.c
         ${PICO_BTSTACK_PATH}/src/btstack_memory.c
         ${PICO_BTSTACK_PATH}/src/btstack_memory_pool.c
@@ -295,6 +296,11 @@ if (EXISTS ${PICO_BTSTACK_PATH}/${BTSTACK_TEST_PATH})
             PROPERTIES
             COMPILE_OPTIONS "-Wno-maybe-uninitialized"
             )
+        set_source_files_properties(
+                ${PICO_BTSTACK_PATH}/src/btstack_hid.c
+                PROPERTIES
+                COMPILE_OPTIONS "-Wno-maybe-uninitialized"
+                )
         set_source_files_properties(
             ${PICO_BTSTACK_PATH}/src/btstack_tlv_none.c
             ${PICO_BTSTACK_PATH}/src/classic/avdtp_util.c
